@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" >
+    <title>董君毅</title>
+    <link rel="short icon" href="Resource/icon.png">
+    <!--stylesheet用来加载外部样式表-->
+    <link rel="stylesheet" href="ExternalStyle.css">
+    <style>
+        a .MD_fourth_div{
+            border: 1px solid #cccccc;
+            width: 90%;
+            height: 50px;
+
+            margin: 10px auto;
+            border-radius: 5px;
+
+            line-height: 50px;
+
+            width: 60px;
+        }
+        .MD_left_img{
+            float: left;
+            margin-left: 10px;
+            margin-top: 15px;
+            margin-right: 20px;
+        }
+
+    </style>
+
+
+
+    <script>
+        function gaoshuchengji(xingming,gaoshu1,gaoshu2)
+        {   //公开属性
+            this.xingming = xingming;
+            this.gaoshu1 = gaoshu1;
+            this.gaoshu2 = gaoshu2;
+
+            //公开方法
+            this.zongchengji=function()
+            {
+                return gaoshu1+gaoshu2;
+
+            }
+            this.toString=function()
+            {
+                return "科目："+xingming +"   成绩："+this.zongchengji();
+            }
+
+        }
+    </script>
+
+</head>
+
+
+<body>
+<body style="background-color: #cccccc)"
+
+<!--第一部分-->
+<header>
+    <span>学生成绩</span>
+</header>
+
+<br>
+<script>
+    document.write("<h1 align=center>" + "大三下学期成绩" + "</h1>");
+</script>
+<script>
+    var a = new Date();
+    document.write("<h1 align=center>" + a.getFullYear() + "." + (a.getMonth() + 1) + "." + a.getDate() + "." + a.getHours()
+        + ":" + a.getMinutes() + ""+"</h1>");
+</script>
+<br><br>
+<script>
+    var i;
+    var a = ["大学物理", "高等数学", "C 语 言&nbsp&nbsp&nbsp", "操作系统", "计算机网络"];
+    document.write("<h1>"+""+"</h1>")
+    document.write("<ul>")
+    for (i in a)
+    {
+        var student= new gaoshuchengji(a[i],  Math.round(Math.random() * 10 + 30), Math.round(Math.random() * 10 + 30));
+        document.writeln("<li>"+student.toString()+"</li>");
+        document.write("<br>");
+    }
+    document.write("</ul>");
+</script>
+
+<a href="DropletService.html">
+    <div class="MD_fourth_div" >
+        <!--<img class="MD_left_img" src="Resource/gr_1.png" alt="">-->
+        <span>返回</span>
+    </div>
+</a>
+
+</body>
+</html>
